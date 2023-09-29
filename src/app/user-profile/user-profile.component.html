@@ -1,0 +1,19 @@
+<h1>Contact form</h1>
+<img [src]="user.photo" [alt]="user.name">
+<article>
+    <p>LastName: {{ user.name }}</p>
+    <p>FirstName: {{ user.firstName }}</p>
+    <p>Favorite quote: {{ user.quote }}</p>
+    <button *ngIf="!showAge" (click)="showAge = true">Voir l'age</button>
+        <p *ngIf="showAge">Age : {{ user.age }}</p>
+    <button *ngIf="showAge" (click)="showAge = false">Cacher l'age</button>
+</article>
+
+<article>
+    <label for="quote">new favorite quote</label>
+    <input type="text" name="quote" id="quote" [(ngModel)]="user.quote" >
+</article>
+
+<!-- <button *ngIf="!showAge" (click)="showAge = true">Voir l'age</button>
+    <p *ngIf="showAge">Age : {{ user.age }}</p>
+<button *ngIf="showAge" (click)="showAge = false">Cacher l'age</button> -->
